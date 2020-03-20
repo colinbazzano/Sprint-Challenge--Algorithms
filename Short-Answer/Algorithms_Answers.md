@@ -9,3 +9,15 @@ b) O(n\*\*2) - We first assign the sum variable the value of 0. We loop through 
 c) O(n) - I would believe that in Big O notation, this last question is linear. The function is being called recursively n (or in this case, bunnies) amount of times before reaching the base case.
 
 ## Exercise II
+
+number of floors in the building = n
+floor f, if egg is thrown off of floor f or higher, it will break
+less than floor f, it will not break
+
+I would begin by setting the base cases, 0 aka the ground. I would inquire about whether or not you could throw any egg on the ground level floor, but either way we know that it will not break as if it could that would be floor f and no floor above would be viable for egg throwing.
+
+We are trying to minimize the amount of eggs thrown/broken, so I would think it would be best to increment until the egg is broken, which could be our next base case. I suppose that it would depend on if I know whether or not the eggs return broken/unbroken.
+
+If the last sentence above is the case and I do know how they return
+
+I would loop through the range of n and for each loop check if we are at 0 (for our base case) as well as if the egg is broken, if not, recursively call the function again but with n + 1 indicating we have gone up a floor and tested again.
