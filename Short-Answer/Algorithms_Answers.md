@@ -9,3 +9,17 @@ b) TIME: O(n) SPACE: O(1) - The function will grow longer as the input is longer
 c) TIME: O(2n), so O(n), SPACE: O(n) - What we are doing in this function is first calculating how many bunnies there are, by calling the function minus 1 until we reach the base case, 0. Then we move back up the stack calling 2 + the number to return the amount of bunny ears. bunnyEars(40) will return 80 because 2 ears per bunny for 40 bunnines is 80. This is n multiplied by 2, drop the constant and you are left with O(n).
 
 ## Exercise II
+
+The variables we have are:
+
+number of floors in the building (total): n
+floor = f, if an egg is thrown off of floor f or higher, it will break
+less than floor f, it will not break.
+
+We know that floor 0 is the ground, and an egg will no break on that floor. It if did, there are no viable floors for egg throwing.
+
+A question I would ask if being asked to solve this would be: Will I know when an egg is broken from a floor?
+
+If I do know the state of the egg upon returning, I would have a base case that is if `f == 0` return because we are on the floor, as well as when the egg is returned `broken`. This way, I would climb up the floors and call the function again with the floor + 1. Climb up the floors until an egg is returned broken which I would then know is the first floor that eggs cannot be thrown from, as each floor above would also return a broken egg.
+
+The recursive function can continue to call itself so long as the egg is returned unbroken, otherwise we would want to break out of the function and return the broken egg.
